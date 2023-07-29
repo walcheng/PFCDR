@@ -75,7 +75,7 @@ You can run this model through:
 
 ```powershell
 # Run directly with default parameters 
-python main.py
+python main.py --process_data_mid 0 --process_data_ready 0
 
 ```
 
