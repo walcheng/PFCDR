@@ -1,0 +1,11 @@
+{
+  "syn_root": "./syn_data/",
+  "iter": 300,
+  "batch": 200,
+  "r_feature": 0,
+  "lr": 1e-4,
+  "weight_decay": 1e-4,
+  "clean_gen_data": true,
+  "target_label": 5,
+  "store_best_results": true
+}
