@@ -78,6 +78,8 @@ You can run this model through:
 python main.py --process_data_mid 0 --process_data_ready 0
 
 ```
+It will run a little while since it need to generate prototypes on overlapped users in source and target domains. This 
+prototypes will automatically save, next time you can directly use some users for CDR.
 
 If you wanna try different `weight decay`, `embedding dimmension` or more tasks, you may change 
 the settings in `./config.json`. If you wanna try the parameter of inversion stage you may change 
