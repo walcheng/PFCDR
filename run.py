@@ -83,7 +83,7 @@ class Run():
         return data_iter
 
     def read_rating_preference(self, path):
-        #src_rate_pre 由用户id和对应的rating preference emb组成
+        #src_rate_pre consists by the user id and corresponding prototype
         src_rate_pre_file = path + '_train_src.csv'
         tgt_rate_pre_file = path + '_train_tgt.csv'
         co_uid_cols = ['co_uid']
