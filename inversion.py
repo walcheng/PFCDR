@@ -77,7 +77,7 @@ class Inversion(object):
         if self.clean_gen_data:
             if os.path.isfile(save_file):
                 os.remove(save_file)
-        ''' 直接初始化所有inverse idx的内容，并逆向，计算开销大，以下使用batch来批次计算'''
+        ''' initial v with batch to save the memory'''
         num_inverse_idx = len(self.inverse_idx)
         all_targets = torch.FloatTensor([self.target_label] * num_inverse_idx).to(self.device)
         num_batches = (num_inverse_idx - 1) // self.batch + 1
@@ -88,7 +88,7 @@ class Inversion(object):
                 sub_idx = self.inverse_idx[i*self.batch:]
             print("*****Initialization new batches")
             best_loss = 1e4
-            '''初始化输入和目标标签'''
+            '''initial v and target rating'''
             if self.inv_goal == 'src':
                 user_inputs, item_inputs = self.input_init(sub_idx, self.src_item_dims, self.device)
             elif self.inv_goal == 'tgt':
