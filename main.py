@@ -15,12 +15,13 @@ def prepare(config_path):
     parser.add_argument('--task', default='3', help='task1: src Books, tgt Movies'
                                                     'task2: src books tgt Music'
                                                     'task4: src Music tgt Movies')
-    parser.add_argument('--base_model', default='MF', choices=['MF', 'GMF', 'DNN'])
+    parser.add_argument('--base_model', default='MF', choices=['MF', 'DNN', 'GMF'])
     parser.add_argument('--seed', type=int, default=2020)
     parser.add_argument('--ratio', default=[0.8, 0.2], help='[train_ratio, test_ratio]')
     parser.add_argument('--gpu', default='1')
     parser.add_argument('--epoch', type=int, default=10)
-    parser.add_argument('--lr', type=float, default=0.005)
+    parser.add_argument('--lr', type=float, default=0.01, help='lr for base model training')
+    parser.add_argument('--lr_prototype', type=float, default=0.005, help='lr for prototype bridge function')
     args = parser.parse_args()
 
     random.seed(args.seed)
@@ -35,6 +36,7 @@ def prepare(config_path):
         config['ratio'] = args.ratio
         config['epoch'] = args.epoch
         config['lr'] = args.lr
+        config['lr_prototype'] = args.lr_prototype
     return args, config
 
 def print_hi(name):
