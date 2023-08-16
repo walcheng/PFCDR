@@ -178,7 +178,7 @@ class MFBasedModel(torch.nn.Module):
             predict_rate = torch.mm(tgt_user_embedding, src_rate_pre.T) - torch.tensor((target_label))
             predict_rate = torch.abs(predict_rate)
             sorted, indices = torch.sort(predict_rate, dim=0)
-            topk = 50000
+            topk = 70000
             topk_indices = indices[:topk, :]
             topk_indices = topk_indices.T.reshape(-1, 1).squeeze()
             topk_uid_emb = self.tgt_model.uid_embedding(topk_indices).view(len(x), topk, self.emb_dim)
@@ -259,7 +259,7 @@ class GMFBasedModel(torch.nn.Module):
             predict_rate = torch.mm(tgt_user_embedding, src_rate_pre.T) - torch.tensor((target_label))
             predict_rate = torch.abs(predict_rate)
             sorted, indices = torch.sort(predict_rate, dim=0)
-            topk = 10000
+            topk = 50000
             topk_indices = indices[:topk, :]
             topk_indices = topk_indices.T.reshape(-1, 1).squeeze()
             topk_uid_emb = self.tgt_model.embedding.uid_embedding(topk_indices).view(len(x), topk, self.emb_dim)
@@ -331,7 +331,7 @@ class DNNBasedModel(torch.nn.Module):
             predict_rate = torch.mm(self.tgt_model.linear(tgt_user_embedding), src_rate_pre.T) - torch.tensor((target_label))
             predict_rate = torch.abs(predict_rate)
             sorted, indices = torch.sort(predict_rate, dim=0)
-            topk = 15000
+            topk = 70000
             topk_indices = indices[:topk, :]
             topk_indices = topk_indices.T.reshape(-1, 1).squeeze()
             topk_uid_emb = self.tgt_model.embedding.uid_embedding(topk_indices).view(len(x), topk, self.emb_dim)

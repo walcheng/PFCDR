@@ -42,6 +42,7 @@ class Run():
         self.meta_dim = config['meta_dim']
         self.num_fields = config['num_fields']
         self.lr = config['lr']
+        self.lr_prototype = config['lr_prototype']
         self.wd = config['wd']
 
         self.input_root = self.root + 'ready/_' + str(int(self.ratio[0] * 10)) + '_' + str(int(self.ratio[1] * 10)) + \
@@ -296,7 +297,7 @@ class Run():
                 os.makedirs(model_root)
             torch.save(model, f"{model_root}{str_ratio}{self.base_model}.pt")
         # optimizer_rp_map for mapping rating preference from source to target
-        optimizer_rp_map = torch.optim.Adam(params=model.rp_mapping.parameters(), lr=self.lr, weight_decay=self.wd)
+        optimizer_rp_map = torch.optim.Adam(params=model.rp_mapping.parameters(), lr=self.lr_prototype, weight_decay=self.wd)
         self.SFCDR(model, inverse_idx, test_idx, criterion, optimizer_rp_map)
         # torch.save(model, f"{model_root}{str_ratio}{self.base_model}.pt")
         print(model)
