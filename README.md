@@ -1,4 +1,4 @@
-# Source-Free Cross-Domain Recommendation via Transferring Prototypes (SFCDR)
+# Privacy-Friendly Cross-Domain Recommendation via Distilling User-irrelevant Information (PFCDR)
 
 ## Introduction
 This repository provides the implementations of SFCDR and two popular baselines (TGTOnly, EMCDR):
