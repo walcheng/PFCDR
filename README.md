@@ -1,7 +1,7 @@
 # Privacy-Friendly Cross-Domain Recommendation via Distilling User-irrelevant Information (PFCDR)
 
 ## Introduction
-This repository provides the implementations of SFCDR and two popular baselines (TGTOnly, EMCDR):
+This repository provides the implementations of PFCDR and two popular baselines (TGTOnly, EMCDR):
 * TGTOnly：Train a MF model with the data of the target domain.
 * EMCDR: [Cross-Domain Recommendation: An Embedding and Mapping Approach](https://www.ijcai.org/Proceedings/2017/0343.pdf) (IJCAI 2017)
 
