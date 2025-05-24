@@ -84,3 +84,15 @@ prototypes will automatically save, next time you can directly use some users fo
 If you wanna try different `weight decay`, `embedding dimmension` or more tasks, you may change 
 the settings in `./config.json`. If you wanna try the parameter of inversion stage you may change 
 the settings in `./inversion_config.json`.
+
+If the code is helpful for you, please cite this paper:
+
+```
+@inproceedings{wang2025privacy,
+  title={Privacy-Friendly Cross-Domain Recommendation via Distilling User-irrelevant Information},
+  author={Wang, Cheng and Xu, Wenchao and Wang, Haozhao and Liu, Wei and Li, Ruixuan},
+  booktitle={Proceedings of the ACM on Web Conference 2025},
+  pages={450--461},
+  year={2025}
+}
+```
